@@ -110,13 +110,13 @@ Further details about the program can be assessed [here](https://www.theforage.c
 	<br> 
 	<h3>Sample Visualizations</h3>
 	<p>
-		<img src="Images/newplot.png" alt="download" border="0" height='200px' width='280px'>
-		<img src="Images/newplot2.png" alt="download-1" border="0" height='200px' width='280px'>
+		<img src="Images/newplot.png" alt="download1" border="0" height='250px' width='350px'>
+		<img src="Images/newplot2.png" alt="download2" border="0" height='250px' width='350px'>
 	</p>
 	<br>
 	<p>
-		<img src="https://i.ibb.co/7Wv830j/newplot-3.png" alt="newplot-3" border="0" height='300px' width='480px'>
-		<img src="https://i.ibb.co/yB8SYsB/new.png" alt="new" border="0" height='300px' width='480px'>
+		<img src="Images/newplot3.png" alt="download3" border="0" height='250px' width='350px'>
+		<img src="Images/newplot4.png" alt="download4" border="0" height='250px' width='350px'>
 	</p>
 	
 </details>
@@ -125,61 +125,51 @@ Further details about the program can be assessed [here](https://www.theforage.c
 <details>
 	<summary>Statistical Analysis</summary>
 	<br>
-	<p style='text-align:justify;'>For this task I further looked into the question that was asked about the spending habit of customers based on their gender. I found out 	that the number of male customers performed a lot of debit transactions than their female counterparts. I therefore needed to clearly conclude without any doubt that 	         males spend more than females and that the difference is not due to chance. To do this I performed hypothesis testing(Welch's t-Test) to draw conclusion on the result.           Here is the summray of the result;</p>
+	<p style='text-align:justify;'>For this task, I performed ANOVA test to determine if the difference in average unit price between the various customer valuations are 		truly significant.</p>
 	<ul>
-		<li>The hypothesis test I performed showed that there was no difference in their average spend. That is, average spend for males was the same as females</li>
-		<li>Also, I concluded with 95% confidence that average spend for males will mostly fall between <i>28.35 AUD and 29.35 AUD</i> whereas that of females will fall                 between <i>26.38 AUD and 27.36 AUD</i></li>
+		<li>The p value obtained from ANOVA analysis is lesser than the alpha value(p < 0.05), and therefore, we conclude that there are significant differences in the 		mean unit price between the various customer valuations.</li>
+		<li>Tukey’s HSD suggests that, two of the pairwise comparisons for customer valuations rejects null hypothesis (p < 0.05) and indicates statistical significant 		differences in mean unit price. However, due to the random sampling, we would expect to have one of the groups having p-value greater than 0.05 but we will 			still work with the overall p-value.</li>
+
+</li>
 	</ul>
 </details>
 
 <details>
-	<summary>Feature Selection and Engineering</summary>
+	<summary>Affinity Analysis</summary>
 	<br>
-	<p style='text-align:justify;'>The better I prapare the data for modeling, the better my model will perform. In this task, I properly prepared my data by transforming            columns, dropping irrelevant columns, handling missing and categorical values and finally merging if the need be. The following tasks were performed for this step;
+	<p style='text-align:justify;'>Affinity analysis or Market basket analysis, is a data mining technique used to understand the purchase behavior of customers. That is, 		it largely involves the process of finding connections between different items based on the subject's view of these items. Affinity analysis is used for studying 		patterns and behavior in customers to determine links in purchases. Based on the analysis performed, I found out that
 	</p>
 	<ul>
-		<li>Creating and merging new features(annual salary, annual spending and spending ratio)</li>
-		<li>Dropping unneeded columns</li>
-		<li>One hot encodind of gender column</li>
-		<li>Data Normalization</li>
+		<li>DORITOS and KETTLE have the highest support which means they appear the most in our association rule, even though they have a lift value 					below 1, it will be okay to keep them available for customers since cutsomers will likely go for the other as alternative.</li>
+		<li>The lift values are well closer to 1 which could mean that customers see these brands as alternatives to each other and this is even clearer with the 			confidence values we are getting. The probability that the consequent will be purchased based on the antecedents is really low. If customers are seeing these 			brands as alternatives, then its clear that customers like to interchange between these seen brands.</li>
 	</ul>
 	
 </details>
 
 <details>
-	<summary>Predictive Modeling</summary>
+	<summary>Experimentation and Uplifting</summary>
 	<br>
-	<p style='text-align:justify;'> To complete this task I went through the various machine learning steps which includes;</p>
+	<p style='text-align:justify;'>For this part of the project we will be examining the performance in trial vs control stores to provide a recommendation for each 		location based on our insight. The followin insights were found;</p>
 	<ul>
-		<li><b>Data Loading</b> - In this task I loaded the cleaned data that contained all the engineered features as well as the selected ones.</li>
-		<li><b>Data Understanding</b> - In this step, I used both graphical and quantitative methods to explore the distributions and correlations between customer                        attributes.</li>
-		<li><b>Data Splitting</b> - I then went ahead and split the data into train and test data in readiness for modeling.</li>
-		<li><b>Algorithm Evaluation</b> - In this step, I trained various algorithms on the train and standardized train data using default parameters and 10-fold cross                  validation. I then evaluated the performance of each model on the dataset and then selected the best model out of the rest. I also trained a couple of ensemble                  algorithms on the data.</li>
-		<li><b>Parameter Tuning</b> - The best model turned out to be ExtraTreeRegressor which I later went ahead to tune its parameters for better performance using                     Grid Search.</li>
-		<li><b>Final Model</b> - At this stage, the model was ready to make predictions. The model was able to predict the annual salaries of customers with RMSE of                      11130 and R-score of approximately 95%. I plotted the difference between the y-test and predictions and had a linear relationship which means my model did a                      good job at predicting the annual salaries.</li>
-		<li><b>Model Understanding</b> -  I wanted to know which features were mostly affecting/impacting the predictions made by the model and it turned out customers                   annual spend was a major player in predicting the annual salaries of customers.</li>
+		<li>Store 233 was found to be the best control store for trial store 77</li>
+		<li>Store 155 was found to be the best control store for trial store 86</li>
+		<li>Store 178 was found to be the best control store for trial store 88</li>
 	</ul>
-	<h3>Sample Visualizations</h3>
-	<p>
-		<img src="Images/newplot.png" alt="download" border="0" height='300px' width='480px'>
-		<img src="Images/newplot2.png" alt="download-1" border="0" height='300px' width='480px'>
-	</p>
-
 </details>
-
 
 <details>
 	<summary>Summary of Results</summary>
 	<br>
 	<ul>
-		<li>The accuracy of the final model is approximately 95% and the RMSE is approximately 11130</li>
-		<li>Distribution of the difference between the expected values and the predicted values is almost normally distributed which indicates that the final model is                   suitable for predicting the annual salaries of customers.</li>
-		<li>There is a strong correlation with value of about 0.95 between the actual salaries and the predicted salaries. Again, this indicates how close our model's                     prediction is to the actual values.</li>
-		<li>Finally, the feature importance revealed that annual_spend and spending_ratio are the big influencers of the model's predictions</li>
+		<li>The results for trial stores 77 and 88 during the trial period show a significant difference in at least two of the three trial months but this is not the 			case for trial store 86.</li>
+		<li>Stocks should be high in December before the Christmas</li>
+		<li>Kettle, Smiths, Doritos and Pringles should be kept in stocks as they are the most sold</li>
+		<li>Mainstream young singles/couples, retirees are the account for a great share of chips sale so they need much attention.</li>
+		<li>Budget older families have the maximum contribution to sales.</li>
 	</ul>
 </details>
 
 ---
 
 ### Credential 
-[Earned Certificate](https://insidesherpa.s3.amazonaws.com/completion-certificates/ANZ/ZLJCsrpkHo9pZBJNY_ANZ_tCfFoXSNJ4aLnBQye_completion_certificate.pdf)
+[Earned Certificate](https://insidesherpa.s3.amazonaws.com/completion-certificates/Quantium/NkaC7knWtjSbi6aYv_Quantium_tCfFoXSNJ4aLnBQye_1638375505087_completion_certificate.pdf)
