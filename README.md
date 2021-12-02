@@ -1,5 +1,5 @@
 <p align="center">
-<img src='https://cdn.theforage.com/vinternships/companyassets/32A6DqtsbF7LbKdcq/9F4wA4B5J6Kgmef3k/Group%20102.png' width=100%>
+<img src='Images/Quant.png' width=100%>
 </p>
 
 # About Quantium Virtual Experience Program
