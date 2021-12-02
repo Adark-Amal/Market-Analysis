@@ -110,8 +110,8 @@ Further details about the program can be assessed [here](https://www.theforage.c
 	<br> 
 	<h3>Sample Visualizations</h3>
 	<p>
-		<img src="Images/newplot.png" alt="download" border="0" height='300px' width='480px'>
-		<img src="Images/newplot2.png" alt="download-1" border="0" height='300px' width='480px'>
+		<img src="Images/newplot.png" alt="download" border="0" height='200px' width='280px'>
+		<img src="Images/newplot2.png" alt="download-1" border="0" height='200px' width='280px'>
 	</p>
 	<br>
 	<p>
